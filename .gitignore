@@ -4,10 +4,13 @@
 .gwt
 .getignore
 scrap
-/lib
+lib
 .externalToolBuilders
 
 .gwt/build
-/buildlib
-/dist
-/build
+buildlib
+dist
+build
+
+#maven target location
+target
