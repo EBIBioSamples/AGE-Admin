@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>uk.ac.ebi.age</groupId>
   <artifactId>admin</artifactId>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>AGE-admin</name>
   <url>https://github.com/EBIBioSamples/AGE-Admin</url>
@@ -45,13 +45,6 @@
       <groupId>javax.validation</groupId>
       <artifactId>validation-api</artifactId>
       <version>1.0.0.GA</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>javax.validation</groupId>
-      <artifactId>validation-api</artifactId>
-      <version>1.0.0.GA</version>
-      <classifier>sources</classifier>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -135,6 +128,26 @@
           <source>1.7</source>
           <target>1.7</target>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration> 
+              <sources> 
+                <source>../src/main/java/</source> 
+                <source>../src/main/resources/</source> 
+              </sources> 
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
